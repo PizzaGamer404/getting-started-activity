@@ -32,6 +32,11 @@ app.post("/api/token", async (req, res) => {
   res.send({access_token});
 });
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', async () => {
+  // Get the server's IP address
+  const response = await fetch('https://api.ipify.org?format=json');
+  const data = await response.json();
+  // Log the server's IP address and port
   console.log(`Server listening at http://localhost:${port}`);
+  console.log(`Server is also accessible at http://${data.ip}:${port}`);
 });

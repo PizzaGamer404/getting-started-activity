@@ -1,9 +1,7 @@
-import './style.css'
-import rocketLogo from '/rocket.png'
+import "./style.css";
+import { setupDiscordSdk } from "./authentication.js";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <img src="${rocketLogo}" class="logo" alt="Discord" />
-    <h1>Hello, World!</h1>
-  </div>
-`;
+// Set up the Discord SDK and authenticate the user
+const { discordSdk, auth } = await setupDiscordSdk();
+// Get the app element
+const app = document.querySelector("#app");

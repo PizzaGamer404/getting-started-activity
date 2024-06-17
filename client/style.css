@@ -86,3 +86,15 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+#loading-bar-container {
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+}
+
+#loading-bar {
+  height: 100%;
+  background-color: #646cff;
+  transition: width 0.1s ease;
+}
